@@ -80,6 +80,7 @@ if __name__ == '__main__':
     set_dict = {
         "OUTPUT_DIR": output_dir,
         "SEED": SEED,
+        "STRUCTURE_WEIGHT": STRUCTURE_WEIGHT
         # "SemGraphPADing.LOSS_TYPE": LOSS_TYPE,
         # "SemGraphPADing.NOISE": NOISE,
         # "SemGraphPADing.WO_SEEN": WO_SEEN,
