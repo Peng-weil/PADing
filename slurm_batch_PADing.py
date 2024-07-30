@@ -47,6 +47,7 @@ def generate_random_number(s: int):
 if __name__ == '__main__':
     # generate seed or fix seed
     SEED = generate_random_number(-1)
+    STRUCTURE_WEIGHT = 0.00001
     # # other params
     # LOSS_TYPE = "GMMN"
     # NOISE = False
