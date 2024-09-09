@@ -3,11 +3,11 @@ DATASETS:
   TRAIN: ("coco_2017_train_panoptic_zsi",)
   TEST: ("coco_2017_val_panoptic_with_sem_seg",)  # to evaluate instance and semantic performance as well
 SOLVER:
-  IMS_PER_BATCH: 12
+  IMS_PER_BATCH: 2
   BASE_LR: 0.001
   GENERATOR_LR: 5e-4
   STEPS: (14000, 18500)
-  MAX_ITER: 20000
+  MAX_ITER: 40
   WARMUP_FACTOR: 1.0
   WARMUP_ITERS: 10
   WEIGHT_DECAY: 0.05

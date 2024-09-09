@@ -46,8 +46,11 @@ _darcs
 
 # project dirs
 /detectron2/model_zoo/configs
-/datasets/*
-!/datasets/*.*
-/projects/*/datasets
+/datasets/coco/*
+/datasets/ADEChallengeData2016/*
+# !/datasets/*.*
+# /projects/*/datasets
 /models
 /snippet
+/test.*
+/checklist

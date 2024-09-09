@@ -13,6 +13,7 @@ except:
 import warnings
 warnings.filterwarnings("ignore")
 
+
 import copy
 import itertools
 import os
@@ -87,13 +88,13 @@ class Trainer(DefaultTrainer):
             evaluator_list.append(InsSegzsiEvaluator(dataset_name, output_dir=output_folder))
 
         # panoptic segmentation
-        if evaluator_type == "coco_panoptic_seg":
+        if evaluator_type.__contains__("panoptic_seg"):
             if cfg.MODEL.MASK_FORMER.TEST.PANOPTIC_ON:
                 evaluator_list.append(PanopticzeroEvaluator(dataset_name, output_folder))
         # COCO
-        if evaluator_type == "coco_panoptic_seg" and cfg.MODEL.MASK_FORMER.TEST.INSTANCE_ON:
+        if evaluator_type.__contains__("panoptic_seg") and cfg.MODEL.MASK_FORMER.TEST.INSTANCE_ON:
             evaluator_list.append(InsSegzeroEvaluator(dataset_name, output_dir=output_folder))
-        if evaluator_type == "coco_panoptic_seg" and cfg.MODEL.MASK_FORMER.TEST.SEMANTIC_ON:
+        if evaluator_type.__contains__("panoptic_seg") and cfg.MODEL.MASK_FORMER.TEST.SEMANTIC_ON:
             evaluator_list.append(SemSegGzeroEvaluator(dataset_name, distributed=True, output_dir=output_folder))
 
         if len(evaluator_list) == 0:

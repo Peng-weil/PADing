@@ -152,7 +152,7 @@ class PanopticzeroEvaluator(DatasetEvaluator):
         base_cls_res = {}
         novel_cls_res = {}
         for cls_id, res_c in per_class_res.items():
-            novel_classes = [21, 25, 33, 34, 41, 57, 87, 100, 145, 148, 149, 184, 187, 193]
+            novel_classes = self._metadata.unseen_index
             if cls_id in novel_classes:
                 novel_cls_res[cls_id] = res_c
             else:
